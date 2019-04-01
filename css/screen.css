@@ -84,10 +84,11 @@ img {
     Default markup for typographic elements
 */
 h1 {
-    font-size: 20px;
+    font-size: 50px;
     line-height: 48px;
     margin: 0 0 24px;
     max-width: 200;
+    color: #5051db;
 }
 
 h2 {
@@ -198,6 +199,11 @@ a:focus {
     .o-row {
         padding-left: 48px;
         padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
     }
 
     .o-row--lg {
@@ -338,6 +344,36 @@ a:focus {
 .o-list {
     list-style: none;
     padding: 0;
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+.o-section {
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.o-section+.o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+
+    .o-section--lg+.o-section--lg,
+    .o-section--xl+.o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl+.o-section--xl {
+        margin-top: 72px;
+    }
 }
 
 /*------------------------------------*\
@@ -703,6 +739,15 @@ a:focus {
     .u-5-of-6-bp4 {
         width: 83.3333333333% !important;
     }
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+.u-pt-clear {
+    padding-top: 0 !important;
 }
 
 /*------------------------------------*\
